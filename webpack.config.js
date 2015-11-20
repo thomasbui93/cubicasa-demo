@@ -7,7 +7,8 @@ var webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     path = require('path'),
     srcPath = path.join(__dirname, 'src'),
-    ExtractTextPlugin = require("extract-text-webpack-plugin");
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
     target: 'web',
@@ -49,13 +50,15 @@ module.exports = {
             inject: true,
             template: 'src/index.html'
         }),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],
 
     debug: true,
     devtool: 'eval-cheap-module-source-map',
     devServer: {
         contentBase: './public',
-        historyApiFallback: true
+        historyApiFallback: true,
+
     }
 };
