@@ -1,0 +1,58 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+.input-container, .search-status, .picking-locations, .result-container{
+  position: relative;
+  width: 400px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.search-status{
+  padding: 5px;
+}
+.input-container{
+  margin-top: 100px;
+}
+.location-picking{
+  position: relative;
+  background-color: transparentize(#3498db, 0.8);
+  border: 1px solid #3498db;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 3px;
+  & .icon{
+    position: relative;
+    float: left;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    & img{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 30px;
+    }
+  }
+  & .location-detail{
+    position: relative;
+    height: 50px;
+    display: inline-block;
+    margin-left: 10px;
+    line-height: 50px;
+    font-weight: 500;
+  }
+}
+.result-container{
+  padding: 1em;
+
+  & .floor-container{
+    position: relative;
+    background-color: transparentize(#3498db, 0.9);
+    border: 1px solid #3498db;
+    padding: 1em;
+  }
+}

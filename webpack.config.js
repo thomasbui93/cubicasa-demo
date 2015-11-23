@@ -19,7 +19,7 @@ module.exports = {
     },
     resolve: {
         root: srcPath,
-        extensions: ['', '.js', '.scss'],
+        extensions: ['', '.js', '.scss', '.jsx'],
         modulesDirectories: ['node_modules', 'src']
     },
     output: {
@@ -34,7 +34,7 @@ module.exports = {
     },
     module: {
         loaders:[
-            { test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel' },
+            { test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel?presets[]=react,presets[]=es2015' },
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
